@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DB Farm | Doğal Köy Ürünleri</title>
+    <meta name="description" content="DB Farm'dan sofranıza %100 doğal, katkısız süt, yumurta, bal ve ev yapımı ürünler. Doğadan sofranıza sağlıkla...">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons (For UI Iconf) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">DB Farm.</a>
+            
+            <div class="nav-links">
+                <a href="#hakkimizda">Hakkımızda</a>
+                <a href="#urunler">Ürünlerimiz</a>
+                <a href="#surec">Sipariş Süreci</a>
+                <a href="#iletisim" class="btn-primary" style="color:white !important;">İletişim</a>
+                <a href="#" class="cart-icon-btn" id="cartOpenBtn"><i class="ri-shopping-cart-2-line"></i><span class="cart-badge" id="cartBadge">0</span></a>
+            </div>
+
+            <div class="menu-toggle">
+                <i class="ri-menu-3-line"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- Using AI Generated Hero Image -->
+        <img src="assets/hero.png" alt="DB Farm Doğal Yeşil Çiftlik" class="hero-bg">
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <span class="hero-tag">En Taze & En Doğal</span>
+            <h1>Doğadan Sofranıza <br> Sağlık ve Güvenle</h1>
+            <p>Modern tarım kimyasallarından uzak, tamamen geleneksel ve organik yöntemlerle ürettiğimiz doğal köy ürünleri.</p>
+            <div class="hero-btns">
+                <a href="#urunler" class="btn-primary">Ürünleri İncele</a>
+                <a href="#hakkimizda" class="btn-outline">Hikayemiz</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about fade-in-section" id="hakkimizda">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img-wrapper">
+                    <img src="assets/about.png" alt="Doğal Köy Ürünleri Masa" class="about-img">
+                    <div class="about-experience">
+                        <h3>%100</h3>
+                        <p>Doğal & Katkısız</p>
+                    </div>
+                </div>
+                
+                <div class="about-content">
+                    <span class="section-tag">Hakkımızda</span>
+                    <h3>Doğaya ve İnsan Sağlığına Saygı</h3>
+                    <p>DB Farm olarak amacımız, doğanın taptaze ve saf halini hiçbir katkı maddesi kullanmadan evinize getirmektir. Tıpkı eskiden olduğu gibi, topraklarımızı ve hayvanlarımızı kimyasallardan uzak, sevgiyle ve tamamen geleneksel yollarla besliyoruz.</p>
+                    
+                    <ul class="features-list">
+                        <li><i class="ri-leaf-line"></i> Sürdürülebilir ve Organik Tarım</li>
+                        <li><i class="ri-heart-pulse-line"></i> Serbest Gezen, Mutlu Hayvanlar</li>
+                        <li><i class="ri-shield-check-line"></i> Koruyucu veya Katkı Maddesi İçermez</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products fade-in-section" id="urunler">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Ürünlerimiz</span>
+                <h2 class="section-title">Çiftliğimizden Size Özel</h2>
+                <p class="section-subtitle">Günlük üretilen, besin değerleri en üst seviyede ve geleneksel tatlarımızı koruyarak hazırlanan ürün kataloğumuz.</p>
+            </div>
+
+            <div class="product-grid">
+                <!-- Dairy -->
+                <div class="product-card">
+                    <div class="product-icon-wrapper">
+                        <i class="ri-cup-line"></i>
+                    </div>
+                    <h3>Süt ve Süt Ürünleri</h3>
+                    <p>Günlük taze inek ve keçi sütü ile doğal ürünlerimiz.</p>
+                    <div class="product-items">
+                        <div class="product-item">
+                            <div class="item-info"><span>Günlük Taze Çiğ Süt</span><span class="price">120 ₺</span></div>
+                            <button class="add-btn" onclick="addToCart('sut1', 'Günlük Taze Çiğ Süt', 120)"><i class="ri-add-line"></i> Ekle</button>
+                        </div>
+                        <div class="product-item">
+                            <div class="item-info"><span>Ev Yapımı Tereyağı</span><span class="price">350 ₺</span></div>
+                            <button class="add-btn" onclick="addToCart('sut2', 'Ev Yapımı Tereyağı', 350)"><i class="ri-add-line"></i> Ekle</button>
+                        </div>
+                        <div class="product-item">
+                            <div class="item-info"><span>Köy Peyniri & Çökelek</span><span class="price">220 ₺</span></div>
+                            <button class="add-btn" onclick="addToCart('sut3', 'Köy Peyniri & Çökelek', 220)"><i class="ri-add-line"></i> Ekle</button>
+                        </div>
+                        <div class="product-item">
+                            <div class="item-info"><span>Doğal Süzme Yoğurt</span><span class="price">150 ₺</span></div>
+                            <button class="add-btn" onclick="addToCart('sut4', 'Doğal Süzme Yoğurt', 150)"><i class="ri-add-line"></i> Ekle</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poultry -->
+                <div class="product-card">
+                    <div class="product-icon-wrapper">
+                        <i class="ri-sun-line"></i>
+                    </div>
+                    <h3>Kümes Ürünleri</h3>
+                    <p>Özgürce dolaşan tavuklarımızdan elde edilen ürünler.</p>
+                    <div class="product-items">
+                        <div class="product-item">
+                            <div class="item-info"><span>Gezen Tavuk Yumurtası (30'lu)</span><span class="price">180 ₺</span></div>
+                            <button class="add-btn" onclick="addToCart('tavuk1', 'Gezen Tavuk Yumurtası (30\'lu)', 180)"><i class="ri-add-line"></i> Ekle</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Honey -->
+                <div class="product-card">
+                    <div class="product-icon-wrapper">
+                        <i class="ri-drop-line"></i>
+                    </div>
+                    <h3>Bal ve Arı Ürünleri</h3>
+                    <p>El değmemiş doğadan, şekersiz ve %100 hakiki arı ürünleri.</p>
+                    <div class="product-items">
+                        <div class="product-item">
+                            <div class="item-info"><span>Karakovan Petek Balı</span><span class="price">650 ₺</span></div>
+                            <button class="add-btn" onclick="addToCart('bal1', 'Karakovan Petek Balı', 650)"><i class="ri-add-line"></i> Ekle</button>
+                        </div>
+                        <div class="product-item">
+                            <div class="item-info"><span>Süzme Çiçek Balı</span><span class="price">450 ₺</span></div>
+                            <button class="add-btn" onclick="addToCart('bal2', 'Süzme Çiçek Balı', 450)"><i class="ri-add-line"></i> Ekle</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Veggies & HomeMade -->
+                <div class="product-card">
+                    <div class="product-icon-wrapper">
+                        <i class="ri-plant-line"></i>
+                    </div>
+                    <h3>Kışlık ve Ev Yapımı</h3>
+                    <p>Mevsiminde toplanan sebzelerden hazırlanan lezzetler.</p>
+                    <div class="product-items">
+                        <div class="product-item">
+                            <div class="item-info"><span>Güneşte Kurutulmuş Salça</span><span class="price">280 ₺</span></div>
+                            <button class="add-btn" onclick="addToCart('kis1', 'Güneşte Kurutulmuş Salça', 280)"><i class="ri-add-line"></i> Ekle</button>
+                        </div>
+                        <div class="product-item">
+                            <div class="item-info"><span>Köy Tarhanası</span><span class="price">190 ₺</span></div>
+                            <button class="add-btn" onclick="addToCart('kis2', 'Köy Tarhanası', 190)"><i class="ri-add-line"></i> Ekle</button>
+                        </div>
+                        <div class="product-item">
+                            <div class="item-info"><span>Doğal İncir Reçeli</span><span class="price">160 ₺</span></div>
+                            <button class="add-btn" onclick="addToCart('kis3', 'Doğal İncir Reçeli', 160)"><i class="ri-add-line"></i> Ekle</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process fade-in-section" id="surec">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Nasıl Çalışır?</span>
+                <h2 class="section-title">Sipariş ve Teslimat Süreci</h2>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Siparişi Oluşturun</h3>
+                    <p>WhatsApp veya sosyal medya üzerinden istediğiniz ürünleri bize iletin.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Taptaze Hazırlayalım</h3>
+                    <p>Özellikle süt ve yumurta gibi ürünler günlük olarak sizin için ayrılır.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Özenle Paketleyelim</h3>
+                    <p>Doğal ambalajlar ve gerekiyorsa soğuk zincir kutuları içerisine yerleştirilir.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Kapınıza Gelsin</h3>
+                    <p>Soğutuculu araçlarımız veya anlaşmalı kargomuz ile güvenle size teslim edilir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Storage Info Banner -->
+    <div class="banner fade-in-section">
+        <div class="container">
+            <h2>Saklama Koşulu İpuçları</h2>
+            <p>Doğal ürünler koruyucu içermez! Sütünüzü teslim aldıktan sonra hemen kaynatın. Balınızı asla buzdolabına koymayın, oda sıcaklığında saklayın. Yumurtanızı ise kullanana kadar yıkamayın ki doğal koruyucu zarı kaybolmasın.</p>
+            <a href="#iletisim" class="btn-outline">Sipariş Vermek İçin İletişime Geçin</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="iletisim">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">DB Farm.</a>
+                    <p>Modern tarımın getirdiği kimyasallardan uzak, tamamen geleneksel ve organik yöntemlerle yetiştirdiğimiz ürünleri sizlere sunmaktan gurur duyuyoruz.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="ri-instagram-line"></i></a>
+                        <a href="#"><i class="ri-facebook-circle-line"></i></a>
+                        <a href="#"><i class="ri-whatsapp-line"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4>Hızlı Menü</h4>
+                    <ul class="footer-links">
+                        <li><a href="#hakkimizda">Hakkımızda</a></li>
+                        <li><a href="#urunler">Kategoriler</a></li>
+                        <li><a href="#surec">Sipariş & Teslimat</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>Bize Ulaşın</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="ri-map-pin-line"></i>
+                            <span>Doğal Köy Yolu No:1<br>Merkez / Türkiye</span>
+                        </li>
+                        <li>
+                            <i class="ri-phone-line"></i>
+                            <span>+90 (555) 123 45 67</span>
+                        </li>
+                        <li>
+                            <i class="ri-mail-line"></i>
+                            <span>bilgi@dbfarm.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; 2026 DB Farm Doğal Köy Ürünleri. Tüm hakları saklıdır.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Sepetim</h3>
+            <button class="close-cart" id="cartCloseBtn"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">Sepetiniz şu an boş.</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Toplam:</span>
+                <span id="cartTotalAmt">0 ₺</span>
+            </div>
+            <button class="btn-primary" style="width:100%; justify-content:center;" id="checkoutBtn">
+                <i class="ri-whatsapp-line"></i> WhatsApp ile Sipariş Ver
+            </button>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
